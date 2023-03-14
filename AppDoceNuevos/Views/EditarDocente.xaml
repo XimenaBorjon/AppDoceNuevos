@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AppDoceNuevos.ViewModels"
+             x:Class="AppDoceNuevos.Views.EditarDocente"
+             Title="EditarDocente">
+    <ContentPage.BindingContext>
+        <vm:DirectorViewModels></vm:DirectorViewModels>
+    </ContentPage.BindingContext>
+    <Grid>
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#C6E9FF" Offset="0.2"></GradientStop>
+                    <GradientStop Color="#C8ECEA" Offset="0.5"></GradientStop>
+                    <GradientStop Color="#D9F5C2" Offset="1.0"></GradientStop>
+
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Image
+                    Margin="0,-530,0,0"
+                    Source="prof.png"
+                    HeightRequest="100"
+                    WidthRequest="120"
+            />
+            <Image
+                 Margin="-50,-450,0,0"
+                Source="editar.png"
+                 WidthRequest="30"
+                />
+            <Label
+             Margin="0,20,0,0"
+             Text="Editar Docente"
+             TextColor="White"
+             FontSize="50"
+             FontFamily="Royalacid"
+             HorizontalOptions="Center"
+            />
+            <Label
+             Margin="-220,200,0,0"
+             Text="Nombre"
+             TextColor="White"
+             FontSize="25"
+             FontFamily="Royalacid"
+             HorizontalOptions="Center"
+            />
+            <Border Stroke="#00EEFF"
+                         StrokeShape="RoundRectangle 40,40,40,40"
+                        HeightRequest="45"
+                        WidthRequest="300"
+                 StrokeThickness="3"
+                 Background="#77A6DE"
+                 Margin="-10,-280,0,0"
+                 HorizontalOptions="Center">
+                <Entry Text="{Binding docente.Nombre}"
+                 FontSize="15"
+                 TextColor="White"
+                 />
+            </Border>
+            <Label
+             Margin="-130,280,0,0"
+             Text="Apellido Paterno"
+             TextColor="White"
+             FontSize="25"
+             FontFamily="Royalacid"
+             HorizontalOptions="Center"
+            />
+            <Border Stroke="#00EEFF"
+                         StrokeShape="RoundRectangle 40,40,40,40"
+                         HeightRequest="45"
+                        WidthRequest="300"
+                 StrokeThickness="3"
+                 Background="#77A6DE"
+                 Margin="-10,-120,0,0"
+                 HorizontalOptions="Center">
+                <Entry Text="{Binding docente.ApellidoPaterno}"
+                 FontSize="15"
+                 TextColor="White" 
+                 />
+            </Border>
+            <Label
+             Margin="-130,360,0,0"
+             Text="Apellido Materno"
+             TextColor="White"
+             FontSize="25"
+             FontFamily="Royalacid"
+             HorizontalOptions="Center"
+            />
+            <Border Stroke="#00EEFF"
+                         StrokeShape="RoundRectangle 40,40,40,40"
+                        HeightRequest="45"
+                        WidthRequest="300"
+                 StrokeThickness="3"
+                 Background="#77A6DE"
+                 Margin="-10,40,0,0"
+                 HorizontalOptions="Center">
+                <Entry Text="{Binding docente.ApellidoMaterno}"
+                 FontSize="15"
+                 TextColor="White" 
+                 />
+            </Border>
+            <Label
+             Margin="-130,440,0,0"
+             Text="Correo Eletronico"
+             TextColor="White"
+             FontSize="25"
+             FontFamily="Royalacid"
+             HorizontalOptions="Center"
+            />
+            <Border Stroke="#00EEFF"
+                         StrokeShape="RoundRectangle 40,40,40,40"
+                        HeightRequest="45"
+                        WidthRequest="300"
+                 StrokeThickness="3"
+                 Background="#77A6DE"
+                 Margin="-10,200,0,0"
+                 HorizontalOptions="Center">
+                <Entry Keyboard="Email" Text="{Binding docente.Correo}"
+                 FontSize="15"
+                 TextColor="White" 
+                 />
+            </Border>
+            <Label
+             Margin="-250,520,0,0"
+             Text="Edad"
+             TextColor="White"
+             FontSize="25"
+             FontFamily="Royalacid"
+             HorizontalOptions="Center"
+            />
+            <Border Stroke="#00EEFF"
+                         StrokeShape="RoundRectangle 40,40,40,40"
+                        HeightRequest="45"
+                        WidthRequest="60"
+                 StrokeThickness="3"
+                 Background="#77A6DE"
+                 Margin="-250,350,0,0"
+                 HorizontalOptions="Center">
+                <Entry Keyboard="Numeric" Text="{Binding docente.Edad}"
+                       HorizontalTextAlignment="Center" 
+                 FontSize="15"
+                 TextColor="White" 
+                 />
+            </Border>
+            <Label
+             Margin="100,520,0,0"
+             Text="Tipo de Docente"
+             TextColor="White"
+             FontSize="25"
+             FontFamily="Royalacid"
+             HorizontalOptions="Center"
+            />
+            <Border Stroke="#00EEFF"
+                         StrokeShape="RoundRectangle 40,40,40,40"
+                        HeightRequest="45"
+                        WidthRequest="180"
+                 StrokeThickness="3"
+                 Background="#77A6DE"
+                 Margin="100,350,0,0"
+                 HorizontalOptions="Center">
+                <Picker TextColor="White" ItemsSource="{Binding docente.TipoDocente}">
+                    <Picker.Items FontSize="15" HorizontalTextAlignment="Center">
+                        <x:String>Ordinario</x:String>
+                        <x:String>Ingles</x:String>
+                        <x:String>Deportes</x:String>
+                        <x:String>Artes</x:String>
+                    </Picker.Items>
+                </Picker>
+
+            </Border>
+            <Label
+             Margin="-220,600,0,0"
+             Text="Telefono"
+             TextColor="White"
+             FontSize="25"
+             FontFamily="Royalacid"
+             HorizontalOptions="Center"
+            />
+            <Border Stroke="#00EEFF"
+                         StrokeShape="RoundRectangle 40,40,40,40"
+                        HeightRequest="45"
+                        WidthRequest="260"
+                 StrokeThickness="3"
+                 Background="#77A6DE"
+                 Margin="-60,510,0,0"
+                 HorizontalOptions="Center">
+                <Entry Keyboard="Telephone" Text="{Binding docente.Telefono}"
+                 FontSize="15"
+                 TextColor="White" 
+                 />
+            </Border>
+            <Border Stroke="#FFFFFF"
+                         StrokeShape="RoundRectangle 40,40,40,40"
+                        HeightRequest="50"
+                        WidthRequest="140"
+                 StrokeThickness="3"
+                 Background="#B9E5C2"
+                 Margin="-180,640,0,0"
+                 HorizontalOptions="Center">
+                <Button Command="{Binding EditarCommand}"
+                                FontFamily="Royalacid"
+                                FontSize="20"
+                        Text="Editar"
+                        Background="#00AEFF"
+                                TextColor="White"
+                     />
+            </Border>
+            <Border Stroke="#FFFFFF"
+                         StrokeShape="RoundRectangle 40,40,40,40"
+                        HeightRequest="50"
+                        WidthRequest="140"
+                 StrokeThickness="3"
+                 Background="#B9E5C2"
+                 Margin="180,640,0,0"
+                 HorizontalOptions="Center">
+                <Button Command="{Binding EliminarCommand}"
+                                FontFamily="Royalacid"
+                                FontSize="20"
+                        Text="Eliminar Docente"
+                        Background="#00AEFF"
+                                TextColor="White"
+                     />
+            </Border>
+
+        </Grid>
+
+    </Grid>
+</ContentPage>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AppDoceNuevos.ViewModels"
+             x:Class="AppDoceNuevos.Views.GruposActuales"
+             Title="GruposActuales">
+    <ContentPage.BindingContext>
+        <vm:DirectorViewModels></vm:DirectorViewModels>
+    </ContentPage.BindingContext>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Color="#0595E8" Offset="0.2"></GradientStop>
+                <GradientStop Color="#47B5D6" Offset="0.4"></GradientStop>
+                <GradientStop Color="#7BCEC8" Offset="1.0"></GradientStop>
+
+            </LinearGradientBrush>
+        </Grid.Background>
+ 
+        <Image
+                    Margin="0,-550,0,0"
+                    Source="grupo.png"
+                    HeightRequest="200"
+                    WidthRequest="120"
+         />
+        <Label
+             Margin="0,10,0,0"
+             Text="Docentes Actuales"
+             TextColor="White"
+             FontSize="45"
+             FontFamily="Royalacid"
+             HorizontalOptions="Center"
+            />
+        <ScrollView>
+            <ListView ItemsSource="{Binding ListaDocente}" Margin="0,260,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.RowSpan="2"
+                           Source="pf.png"
+                           Aspect="AspectFill"
+                           HeightRequest="40"
+                           WidthRequest="40" />
+                                <Label Grid.Column="1"
+                           Text="{Binding Nombre}"
+                           FontAttributes="Bold" />
+                                <Label Grid.Row="1"
+                           Grid.Column="1"
+                           Text="{Binding Correo}"
+                           FontAttributes="Italic"
+                            />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </ScrollView>
+        <Grid>
+            <Border Stroke="#7CE6B8"
+                         StrokeShape="RoundRectangle 40,40,40,40"
+                        HeightRequest="50"
+                        WidthRequest="180"
+                 StrokeThickness="3"
+                 Background="#B9E5C2"
+                 Margin="-180,-350,0,0"
+                 HorizontalOptions="Center">
+                <Button Command="{Binding VerAgregarCommand}"
+                                FontFamily="Royalacid"
+                                FontSize="20"
+                        Text="Agregar Docente"
+                        Background="#03A5F5"
+                                TextColor="White"
+                     />
+            </Border>
+            <Border Stroke="#7CE6B8"
+                         StrokeShape="RoundRectangle 40,40,40,40"
+                        HeightRequest="50"
+                        WidthRequest="180"
+                 StrokeThickness="3"
+                 Background="#B9E5C2"
+                 Margin="180,-350,0,0"
+                 HorizontalOptions="Center">
+                <Button Command="{Binding VerEditarCommand}"
+                                FontFamily="Royalacid"
+                                FontSize="20"
+                        Text="Editar Docente"
+                        Background="#03A5F5"
+                                TextColor="White"
+                     />
+
+            </Border>
+        </Grid>
+    </Grid>
+</ContentPage>

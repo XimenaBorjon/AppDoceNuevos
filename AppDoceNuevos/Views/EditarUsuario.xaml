@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AppDoceNuevos.ViewModels"
+             x:Class="AppDoceNuevos.Views.EditarUsuario"
+             Title="EditarUsuario">
+    <ContentPage.BindingContext>
+        <vm:DirectorViewModels></vm:DirectorViewModels>
+    </ContentPage.BindingContext>
+    <Grid>
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#CDAF65" Offset="0.2"></GradientStop>
+                    <GradientStop Color="#F8C76D" Offset="0.4"></GradientStop>
+                    <GradientStop Color="#F9BD73" Offset="0.6"></GradientStop>
+                    <GradientStop Color="#FBAC7D" Offset="0.8"></GradientStop>
+                    <GradientStop Color="#FDA085" Offset="1.0"></GradientStop>
+
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Image
+                    Margin="0,-410,0,0"
+                    Source="editarnew.png"
+                    HeightRequest="250"
+                    WidthRequest="140"
+            />
+            <Label
+             Margin="0,40,0,0"
+             Text="Editar Usuario"
+             TextColor="White"
+             FontSize="50"
+             FontFamily="Royalacid"
+             HorizontalOptions="Center"
+            />
+
+            <Label
+             Margin="-220,310,0,0"
+             Text="Usuario"
+             TextColor="White"
+             FontSize="25"
+             FontFamily="Royalacid"
+             HorizontalOptions="Center"
+            />
+
+            <Border Stroke="#F2B90F"
+                         StrokeShape="RoundRectangle 40,40,40,40"
+                        HeightRequest="45"
+                        WidthRequest="300"
+                 StrokeThickness="3"
+                 Background="#AA5156"
+                 Margin="-10,-50,0,0"
+                 HorizontalOptions="Center">
+                <Entry Text="{Binding usuario.Usuario1}"
+                 FontSize="15"
+                 TextColor="White"
+                 />
+            </Border>
+
+            <Label
+             Margin="-180,410,0,0"
+             Text="Contrasena"
+             TextColor="White"
+             FontSize="25"
+             FontFamily="Royalacid"
+             HorizontalOptions="Center"
+            />
+
+            <Border Stroke="#F2B90F"
+                         StrokeShape="RoundRectangle 40,40,40,40"
+                        HeightRequest="45"
+                        WidthRequest="300"
+                 StrokeThickness="3"
+                 Background="#AA5156"
+                 Margin="-10,170,0,0"
+                 HorizontalOptions="Center">
+                <Entry Text="{Binding usuario.Contraseña}"
+                 FontSize="15"
+                 TextColor="White"
+                 />
+            </Border>
+
+            <Border Stroke="#F2B90F"
+                         StrokeShape="RoundRectangle 40,40,40,40"
+                        HeightRequest="50"
+                        WidthRequest="150"
+                 StrokeThickness="3"
+                 Margin="-150,480,0,0"
+                 HorizontalOptions="Center">
+                <Button Command="{Binding EditarUsuarioCommand}"
+                                FontFamily="Royalacid"
+                                FontSize="20"
+                        Text="Agregar"
+                        Background="#AA5156"
+                                TextColor="White"
+                     />
+            </Border>
+            <Border Stroke="#F2B90F"
+                         StrokeShape="RoundRectangle 40,40,40,40"
+                        HeightRequest="50"
+                        WidthRequest="150"
+                 StrokeThickness="3"
+                 Margin="150,480,0,0"
+                 HorizontalOptions="Center">
+                <Button Command="{Binding  EliminarUsuarioCommand}"
+                                FontFamily="Royalacid"
+                                FontSize="20"
+                        Text="Cancelar"
+                        Background="#AA5156"
+                                TextColor="White"
+                     />
+            </Border>
+        </Grid>
+    </Grid>
+</ContentPage>

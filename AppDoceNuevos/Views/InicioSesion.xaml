@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AppDoceNuevos.ViewModels"
+             x:Class="AppDoceNuevos.Views.InicioSesion"
+             Title="InicioSesion">
+    <ContentPage.BindingContext>
+        <vm:DirectorViewModels></vm:DirectorViewModels>
+    </ContentPage.BindingContext>
+    <Grid>
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#6CDB8F" Offset="0.2"></GradientStop>
+                    <GradientStop Color="#AEEAAE" Offset="0.5"></GradientStop>
+                    <GradientStop Color="#E0F3C3" Offset="1.0"></GradientStop>
+
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid>
+                <Label 
+            Margin="0,30,0,0"
+            TextColor="White"
+            FontFamily="Royalacid"
+            FontSize="50"
+            Text="Inicio De Sesion" 
+            HorizontalOptions="Center" />
+                <Image
+                    Margin="0,-430,0,0"
+                    Source="colegio.png"
+                    HeightRequest="300"
+                    WidthRequest="150"
+                    />
+
+                <Label 
+             Margin="0,300,0,0"
+             Text="Usuario"
+             TextColor="White"
+             FontSize="25"
+             FontFamily="Ubuntu"
+             HorizontalOptions="Center"
+            />
+                <Border Stroke="#21E7AA"
+                         StrokeShape="RoundRectangle 40,40,40,40"
+                        HeightRequest="50"
+                        WidthRequest="320"
+                 StrokeThickness="3"
+                 Background="#22F26B"
+                 Margin="0,-50,0,0"
+                 HorizontalOptions="Center">
+                    <Entry Text="{Binding usuario.Usuario1}"
+                 FontSize="20"
+                 TextColor="White"
+                 />
+                </Border>
+
+
+                <Grid>
+                    <Label
+             Margin="0,430,0,0"
+             Text="Contraseña"
+             TextColor="White"
+             FontSize="25"
+             FontFamily="Ubuntu"
+             HorizontalOptions="Center"
+            />
+                    <Border Stroke="#21E7AA"
+                         StrokeShape="RoundRectangle 40,40,40,40"
+                        HeightRequest="50"
+                        WidthRequest="320"
+                 StrokeThickness="3"
+                 Background="#22F26B"
+                 Margin="0,220,0,0"
+                 HorizontalOptions="Center">
+                        <Entry IsPassword="True" Text="{Binding usuario.Contraseña}"
+                          FontSize="20"
+                          TextColor="White"
+                 />
+                    </Border>
+
+                    <Grid>
+                        <Border Stroke="#7CE6B8"
+                         StrokeShape="RoundRectangle 40,40,40,40"
+                        HeightRequest="50"
+                        WidthRequest="240"
+                 StrokeThickness="3"
+                 Background="#B9E5C2"
+                 Margin="0,450,0,0"
+                 HorizontalOptions="Center">
+                            <Button Command="{Binding LoginCommand}"
+                                FontFamily="Royalacid"
+                                FontSize="20"
+                        Text="Iniciar Sesion"
+                        Background="#68DB8E"
+                                TextColor="White"
+                     />
+
+                        </Border>
+                    </Grid>
+
+
+
+                </Grid>
+
+            </Grid>
+
+
+
+        </Grid>
+    </Grid>
+</ContentPage>
